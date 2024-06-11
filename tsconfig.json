@@ -18,7 +18,7 @@
   },
   "include": [
     "src"
-  ],
+, "github-token.ts"  ],
   "exclude": [
     "node_modules"
   ]
