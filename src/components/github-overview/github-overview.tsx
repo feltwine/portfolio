@@ -16,7 +16,8 @@ export class GithubRepositories {
   async componentWillLoad() {
     try {
       const repos = await this.GitHubService.getRepos('feltwine');
-      this.repos = repos;
+      // Sort the repos based on the updated_at property in descending order
+      this.repos = repos.sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime());
     } catch (error) {
       console.error("Error loading repositories: ", error);
     }
