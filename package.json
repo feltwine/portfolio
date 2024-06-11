@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "Feltwines portfolio writen in stencil",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "types": "dist/types/index.d.ts",
@@ -12,10 +12,6 @@
     ".": {
       "import": "./dist/portfolio/portfolio.esm.js",
       "require": "./dist/portfolio/portfolio.cjs.js"
-    },
-    "./my-component": {
-      "import": "./dist/components/my-component.js",
-      "types": "./dist/components/my-component.d.ts"
     },
     "./loader": {
       "import": "./loader/index.js",
@@ -46,5 +42,8 @@
     "jest-cli": "^29.7.0",
     "puppeteer": "^21.9.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.2"
+  }
 }

@@ -1,0 +1,70 @@
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    background-color: #232629;
+  }
+  
+  .carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    position: relative;
+    height: 150px;
+    width: 100%;
+    background-color: #363c41;
+    position: relative;
+  }
+  
+  
+  .button-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 35%;
+    cursor: pointer;
+    z-index: 2; /* Ensure buttons are above cards */
+  }
+  
+  .button-wrapper:nth-child(1) {
+    left: 0;
+  }
+  
+  .button-wrapper:nth-child(2) {
+    right: 0;
+  }
+  
+  .repo-card {
+    width: 450px;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .main-card {
+    height: 200px;
+    background-color: rgba(29, 29, 32, 0.95);
+    transform: scale(1.2);
+    z-index: 1;
+  }
+  
+  .side-card {
+    height: 175px;
+    background-color: rgba(29, 29, 32, 0.85);
+    opacity: 1;
+  }
+  
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #DDDDDD;
+  }
+  
+  p {
+    font-size: 14px;
+    color: #DDDDDD;
+  }
