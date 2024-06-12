@@ -15,8 +15,7 @@ export class GithubRepositories {
 
   async componentWillLoad() {
     try {
-      const repos = await this.GitHubService.getRepos('feltwine');
-      // Sort the repos based on the updated_at property in descending order
+      const repos = await this.GitHubService.getRepos();
       this.repos = repos.sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime());
     } catch (error) {
       console.error("Error loading repositories: ", error);
@@ -62,7 +61,7 @@ export class GithubRepositories {
               </div>
             )}
             {currentRepo && (
-              <div class="repo-card main-card">
+              <div class="repo-card main-card" onClick={() => window.open(`https://github.com/${currentRepo.url.split('/')[4]}/${currentRepo.name}`, '_blank')}>
                 <h2>{currentRepo.name}</h2>
                 <p>{currentRepo.description}</p>
               </div>
@@ -86,7 +85,6 @@ export class GithubRepositories {
                 <li><strong>License:</strong> {currentRepo.license ? currentRepo.license.name : 'N/A'}</li>
                 <li><strong>Contributors:</strong> {currentRepo.contributors}</li>
                 <li><strong>Open Issues:</strong> {currentRepo.open_issues}</li>
-                {/* Add more details as needed */}
               </ul>
             </div>
           )}

@@ -28,15 +28,21 @@ export class GitHubService {
     }
   }
 
-  async getRepos(username: string) {
+  async getRepos() {
     try {
-      const response = await axios.get(`${GITHUB_API_BASE_URL}/users/${username}/repos`, {
-        headers: this.getHeaders(),
-      });
-      return response.data;
+        const response = await axios.get(`${GITHUB_API_BASE_URL}/user/repos`, {
+            headers: this.getHeaders(),
+            params: {
+                affiliation: 'owner,collaborator',
+                visibility: 'public',
+                per_page: 100
+            }
+        });
+        return response.data;
     } catch (error) {
-      console.error('Error fetching repositories:', error);
-      throw error;
+        console.error('Error fetching repositories:', error);
+        throw error;
     }
-  }
+}
+
 }
