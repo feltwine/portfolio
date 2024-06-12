@@ -67,6 +67,10 @@
   opacity: 1;
 }
 
+.side-card p {
+  font-size: 12px;
+}
+
 .repo-detail {
   margin-top: 20px;
   padding: 20px;
