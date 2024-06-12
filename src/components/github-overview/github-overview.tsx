@@ -1,6 +1,6 @@
 import { Component, h, State } from '@stencil/core';
 import { GitHubService } from '../../services/github-service';
-import { GITHUB_API_TOKEN } from '../../../github-token';
+import { GITHUB_API_TOKEN } from '../../github-token';
 
 @Component({
   tag: 'github-overview',
